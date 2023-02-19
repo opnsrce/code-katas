@@ -1,0 +1,19 @@
+{
+    "env": {
+        "es6": true,
+        "mocha": true,
+        "node": true
+    },
+    "extends": ["plugin:@typescript-eslint/recommended", "Prettier"],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2022,
+        "project": "./tsconfig.json",
+        "sourceType": "module"
+    },
+    "plugins": ["import", "@typescript-eslint"],
+    "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "error",
+        "@typescript-eslint/no-explicit-any": "error"
+    }
+}
