@@ -1,8 +1,6 @@
 import { expect } from "chai";
 import groupAnagrams from "./index";
 
-groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]);
-
 describe("groupAnagrams", () => {
     context("When there are multiple anagrams", () => {
         it("should correctly group the anagrams", () => {
