@@ -3,12 +3,6 @@
  * the common elements shared between them.
  */
 
-/**
- * Returns the common elements between two arrays
- * @param {Array} array1 The first array
- * @param {Array} array2 The second array
- * @returns {Array} An Array of common elements
- */
 const commonElements = (
     array1: (string | number)[],
     array2: (string | number)[]
