@@ -2,7 +2,7 @@ import { expect } from "chai";
 import stringPermutations from "./index";
 
 describe("string permutations", () => {
-    context("When the string is 3 character long", () => {
+    context("When the input is a 3 character long string", () => {
         it("should return 6 permutations", () => {
             const string = "abc";
             const permutations = ["abc", "acb", "bac", "bca", "cab", "cba"];
@@ -11,7 +11,7 @@ describe("string permutations", () => {
         });
     });
 
-    context("When the string is 1 character long", () => {
+    context("When the input is a 1 character long string", () => {
         it("should return 1 permutation", () => {
             const string = "a";
             const permutations = ["a"];
@@ -20,7 +20,7 @@ describe("string permutations", () => {
         });
     });
 
-    context("When the string is empty", () => {
+    context("When the input is an empty string", () => {
         it("should return an empty array", () => {
             const string = "";
             const permutations = [] as unknown as string[];

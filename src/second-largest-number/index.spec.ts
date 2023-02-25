@@ -2,7 +2,7 @@ import { expect } from "chai";
 import secondLargestNumber from "./index";
 
 describe("secondLargestNumber", () => {
-    context("When the array contains two or more numbers", () => {
+    context("When the input is an array of more than 2 numbers", () => {
         it("should return the second largest number in the array", () => {
             const numbers = [5, 7, 22, 16, 12];
 
@@ -10,7 +10,7 @@ describe("secondLargestNumber", () => {
         });
     });
 
-    context("When the array is empty", () => {
+    context("When the iput is an empty array", () => {
         it("should return undefined", () => {
             const numbers = [] as unknown as number[];
 
@@ -18,7 +18,7 @@ describe("secondLargestNumber", () => {
         });
     });
 
-    context("When input is not an array of numbers", () => {
+    context("When the input is an array containing non-numeric values", () => {
         it("should throw an error", () => {
             const numbers = ["hello", 5, 10] as unknown as number[];
 

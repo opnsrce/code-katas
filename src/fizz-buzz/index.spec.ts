@@ -2,19 +2,19 @@ import { expect } from "chai";
 import fizzBuzz from "./index";
 
 describe("fizzBuzz", () => {
-    context("when N is less than 1", () => {
+    context("When the input is a nubmer less than 1", () => {
         it("should throw a RangeError", () => {
             expect(() => fizzBuzz(-1)).to.throw(RangeError);
         });
     });
 
-    context("when N is greater than 100", () => {
+    context("When the input is a number greater than 100 ", () => {
         it("should throw a RangeError", () => {
             expect(() => fizzBuzz(101)).to.throw(RangeError);
         });
     });
 
-    context("when N is not a number", () => {
+    context("When the input is not a number", () => {
         it("should throw a TypeError", () => {
             const n = "g" as unknown as number;
 
@@ -22,7 +22,7 @@ describe("fizzBuzz", () => {
         });
     });
 
-    context("When N is 100", () => {
+    context("When the input is 100", () => {
         it("should return the correct values", () => {
             const expectedResult = [
                 1,

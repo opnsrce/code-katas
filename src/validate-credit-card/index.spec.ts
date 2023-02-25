@@ -2,41 +2,37 @@ import { expect } from "chai";
 import validateCreditCard from "./index";
 
 describe("validateCreditCard", () => {
-    context(
-        "When the credit card number is a valid Visa with no spaces between the numbers",
-        () => {
-            it("should return true", () => {
-                const card = "4575412805241282";
+    context("When the input is a valid Visa card number with no spaces", () => {
+        it("should return true", () => {
+            const card = "4575412805241282";
 
-                expect(validateCreditCard(card)).to.equal(true);
-            });
+            expect(validateCreditCard(card)).to.equal(true);
+        });
+    });
+
+    context("When the input is a valid Visa card number with spaces", () => {
+        it("should return true", () => {
+            const card = "4575 4128 0524 1282";
+
+            expect(validateCreditCard(card)).to.equal(true);
+        });
+    });
+
+    context(
+        "When the input is a valid Master Card card number without spaces",
+        () => {
+            () => {
+                it("should return true", () => {
+                    const card = "5410004120072439";
+
+                    expect(validateCreditCard(card)).to.equal(true);
+                });
+            };
         }
     );
 
     context(
-        "When the credit card number is a valid Visa with spaces between the numbers",
-        () => {
-            it("should return true", () => {
-                const card = "4575 4128 0524 1282";
-
-                expect(validateCreditCard(card)).to.equal(true);
-            });
-        }
-    );
-
-    context(
-        "When the credit card number is a valid Mastercard with no spaces between the numbers",
-        () => {
-            it("should return true", () => {
-                const card = "5410004120072439";
-
-                expect(validateCreditCard(card)).to.equal(true);
-            });
-        }
-    );
-
-    context(
-        "When the credit card number is a valid Mastercard with spaces between the numbers",
+        "When the input is a valid Master Card card number with spaces",
         () => {
             it("should return true", () => {
                 const card = "5410 0041 2007 2439";
@@ -46,7 +42,7 @@ describe("validateCreditCard", () => {
         }
     );
 
-    context("When the credit card number is not valid", () => {
+    context("When the input is not a valid credit card number", () => {
         it("should return false", () => {
             const card = "5410 0041 2007 1246";
 
@@ -54,23 +50,18 @@ describe("validateCreditCard", () => {
         });
     });
 
-    context("When the credit card number is not valid", () => {
-        it("should return false", () => {
-            const card = "5410 0041 2007 1246";
+    context(
+        "When the input is a string containing non-numeric characters",
+        () => {
+            it("should return false", () => {
+                const card = "bad value";
 
-            expect(validateCreditCard(card)).to.equal(false);
-        });
-    });
+                expect(validateCreditCard(card)).to.equal(false);
+            });
+        }
+    );
 
-    context("When the passed in input is not a string of numbers", () => {
-        it("should return false", () => {
-            const card = "bad value";
-
-            expect(validateCreditCard(card)).to.equal(false);
-        });
-    });
-
-    context("When the passed in input is not a string", () => {
+    context("When the input is not a string", () => {
         it("should return false", () => {
             const card = 12345678 as unknown as string;
 
@@ -78,7 +69,7 @@ describe("validateCreditCard", () => {
         });
     });
 
-    context("When the passed in input undefined", () => {
+    context("When the input is undefined", () => {
         it("should return false", () => {
             const card = undefined as unknown as string;
 
