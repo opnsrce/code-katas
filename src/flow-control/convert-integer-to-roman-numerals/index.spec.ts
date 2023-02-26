@@ -9,7 +9,7 @@ describe("convertIntegerToRomanNumerals", () => {
     });
 
     context("When the input is 5", () => {
-        it("should return 'IV'", () => {
+        it("should return 'V'", () => {
             expect(convertIntegerToRomanNumerals(5)).to.equal("V");
         });
     });
