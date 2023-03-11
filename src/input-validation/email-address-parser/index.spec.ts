@@ -1,8 +1,8 @@
-import { expect } from "chai";
+import { describe, expect, it } from "@jest/globals";
 import emailAddressParser from "./index";
 
 describe("emailAddressParser", () => {
-    context("When the input is an array of valid emails", () => {
+    describe("When the input is an array of valid emails", () => {
         it("should group all of the emails together", () => {
             const emails = ["john.doe@gmail.com", "steve@example.co.uk"];
 
@@ -11,11 +11,11 @@ describe("emailAddressParser", () => {
                 invalid: []
             };
 
-            expect(emailAddressParser(emails)).to.deep.equal(expectedResult);
+            expect(emailAddressParser(emails)).toEqual(expectedResult);
         });
     });
 
-    context("When the input is an array of invalid emails", () => {
+    describe("When the input is an array of invalid emails", () => {
         it("should group all of the emails together", () => {
             const emails = [
                 "noattherate.com",
@@ -28,11 +28,11 @@ describe("emailAddressParser", () => {
                 invalid: emails
             };
 
-            expect(emailAddressParser(emails)).to.deep.equal(expectedResult);
+            expect(emailAddressParser(emails)).toEqual(expectedResult);
         });
     });
 
-    context("When the input is an array of valid and invalid emails", () => {
+    describe("When the input is an array of valid and invalid emails", () => {
         it("should group the emails correctly", () => {
             const emails = [
                 "john.doe@example.com",
@@ -53,11 +53,11 @@ describe("emailAddressParser", () => {
                 ]
             };
 
-            expect(emailAddressParser(emails)).to.deep.equal(expectedResult);
+            expect(emailAddressParser(emails)).toEqual(expectedResult);
         });
     });
 
-    context("When the input is an empty array", () => {
+    describe("When the input is an empty array", () => {
         it("should return empty groups", () => {
             const emails = [] as unknown as string[];
             const expectedResult = {
@@ -65,11 +65,11 @@ describe("emailAddressParser", () => {
                 invalid: []
             };
 
-            expect(emailAddressParser(emails)).to.deep.equal(expectedResult);
+            expect(emailAddressParser(emails)).toEqual(expectedResult);
         });
     });
 
-    context("When the input is an array of empty strings", () => {
+    describe("When the input is an array of empty strings", () => {
         it("should flag the email as invalid", () => {
             const emails = [""] as unknown as string[];
             const expectedResult = {
@@ -77,23 +77,23 @@ describe("emailAddressParser", () => {
                 invalid: [""]
             };
 
-            expect(emailAddressParser(emails)).to.deep.equal(expectedResult);
+            expect(emailAddressParser(emails)).toEqual(expectedResult);
         });
     });
 
-    context("When the input is not an array", () => {
+    describe("When the input is not an array", () => {
         it("should throw an error", () => {
             const emails = 5 as unknown as string[];
 
-            expect(() => emailAddressParser(emails)).to.throw(TypeError);
+            expect(() => emailAddressParser(emails)).toThrow(TypeError);
         });
     });
 
-    context("When the input contains values that are not strings", () => {
+    describe("When the input contains values that are not strings", () => {
         it("should throw an error", () => {
             const emails = [5] as unknown as string[];
 
-            expect(() => emailAddressParser(emails)).to.throw(TypeError);
+            expect(() => emailAddressParser(emails)).toThrow(TypeError);
         });
     });
 });

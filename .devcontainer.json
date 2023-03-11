@@ -21,14 +21,14 @@
                 "[javascript]": {
                     "editor.defaultFormatter": "esbenp.prettier-vscode"
                 }
-			},
-			"extensions": [
-				"ms-vscode-remote.remote-containers",
-				"ms-azuretools.vscode-docker",
-				"DavidAnson.vscode-markdownlint",
-				"esbenp.prettier-vscode",
-				"stkb.rewrap"
-			]
+            },
+            "extensions": [
+                "ms-vscode-remote.remote-containers",
+                "ms-azuretools.vscode-docker",
+                "DavidAnson.vscode-markdownlint",
+                "esbenp.prettier-vscode",
+                "stkb.rewrap"
+            ]
         }
     }
 }

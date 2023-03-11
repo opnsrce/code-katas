@@ -1,39 +1,36 @@
-import { expect } from "chai";
+import { describe, expect, it } from "@jest/globals";
 import firstNonRepeatedCharacter from "./index";
 
 describe("firstNonRepeatedCharacter", () => {
-    context("When the input is a string with non-repeating characters", () => {
+    describe("When the input is a string with non-repeating characters", () => {
         it("should return the first non-repeated character in the string", () => {
             const string = "a quick brown fox jumps over the lazy dog";
 
-            expect(firstNonRepeatedCharacter(string)).to.equal("q");
+            expect(firstNonRepeatedCharacter(string)).toEqual("q");
         });
     });
 
-    context("When the input is an empty string", () => {
+    describe("When the input is an empty string", () => {
         it("should return udefined", () => {
             const string = "";
 
-            expect(firstNonRepeatedCharacter(string)).to.equal(undefined);
+            expect(firstNonRepeatedCharacter(string)).toEqual(undefined);
         });
     });
 
-    context(
-        "When the input is a string without non-repeating characters",
-        () => {
-            it("should return udefined", () => {
-                const string = "abcabc";
+    describe("When the input is a string without non-repeating characters", () => {
+        it("should return udefined", () => {
+            const string = "abcabc";
 
-                expect(firstNonRepeatedCharacter(string)).to.equal(undefined);
-            });
-        }
-    );
+            expect(firstNonRepeatedCharacter(string)).toEqual(undefined);
+        });
+    });
 
-    context("When the input is not a string", () => {
+    describe("When the input is not a string", () => {
         it("should throw an error", () => {
             const string = 5 as unknown as string;
 
-            expect(() => firstNonRepeatedCharacter(string)).throw(TypeError);
+            expect(() => firstNonRepeatedCharacter(string)).toThrow(TypeError);
         });
     });
 });

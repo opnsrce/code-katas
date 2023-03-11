@@ -1,28 +1,28 @@
-import { expect } from "chai";
+import { describe, expect, it } from "@jest/globals";
 import fizzBuzz from "./index";
 
 describe("fizzBuzz", () => {
-    context("When the input is a nubmer less than 1", () => {
+    describe("When the input is a nubmer less than 1", () => {
         it("should throw a RangeError", () => {
-            expect(() => fizzBuzz(-1)).to.throw(RangeError);
+            expect(() => fizzBuzz(-1)).toThrow(RangeError);
         });
     });
 
-    context("When the input is a number greater than 100 ", () => {
+    describe("When the input is a number greater than 100 ", () => {
         it("should throw a RangeError", () => {
-            expect(() => fizzBuzz(101)).to.throw(RangeError);
+            expect(() => fizzBuzz(101)).toThrow(RangeError);
         });
     });
 
-    context("When the input is not a number", () => {
+    describe("When the input is not a number", () => {
         it("should throw a TypeError", () => {
             const n = "g" as unknown as number;
 
-            expect(() => fizzBuzz(n)).to.throw(TypeError);
+            expect(() => fizzBuzz(n)).toThrow(TypeError);
         });
     });
 
-    context("When the input is 100", () => {
+    describe("When the input is 100", () => {
         it("should return the correct values", () => {
             const expectedResult = [
                 1,
@@ -127,7 +127,7 @@ describe("fizzBuzz", () => {
                 "Buzz"
             ];
 
-            expect(fizzBuzz(100)).to.deep.equal(expectedResult);
+            expect(fizzBuzz(100)).toEqual(expectedResult);
         });
     });
 });

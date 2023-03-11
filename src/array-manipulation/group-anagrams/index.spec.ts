@@ -1,8 +1,8 @@
-import { expect } from "chai";
+import { describe, expect, it } from "@jest/globals";
 import groupAnagrams from "./index";
 
 describe("groupAnagrams", () => {
-    context("When the input is an array containing multiple anagrams", () => {
+    describe("When the input is an array containing multiple anagrams", () => {
         it("should correctly group the anagrams", () => {
             const anagrams = ["eat", "tea", "tan", "ate", "nat", "bat"];
             const expectedResult = [
@@ -11,32 +11,26 @@ describe("groupAnagrams", () => {
                 ["bat"]
             ];
 
-            expect(groupAnagrams(anagrams)).to.deep.equal(expectedResult);
+            expect(groupAnagrams(anagrams)).toEqual(expectedResult);
         });
     });
 
-    context("When the input is an array with a single value", () => {
+    describe("When the input is an array with a single value", () => {
         it("should return that item as its own group", () => {
-            expect(groupAnagrams(["a"])).to.deep.equal([["a"]]);
+            expect(groupAnagrams(["a"])).toEqual([["a"]]);
         });
     });
 
-    context(
-        "When the input is an array containing only unique anagrams",
-        () => {
-            it("should put each anagram in its own group", () => {
-                expect(groupAnagrams(["cat", "dog"])).to.deep.equal([
-                    ["cat"],
-                    ["dog"]
-                ]);
-            });
-        }
-    );
+    describe("When the input is an array containing only unique anagrams", () => {
+        it("should put each anagram in its own group", () => {
+            expect(groupAnagrams(["cat", "dog"])).toEqual([["cat"], ["dog"]]);
+        });
+    });
 
-    context("When the input is not an array", () => {
+    describe("When the input is not an array", () => {
         it("should throw an error", () => {
             const anagrams = 5 as unknown as string[];
-            expect(() => groupAnagrams(anagrams)).to.throw(TypeError);
+            expect(() => groupAnagrams(anagrams)).toThrow(TypeError);
         });
     });
 });

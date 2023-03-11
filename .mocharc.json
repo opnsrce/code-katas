@@ -1,9 +1,0 @@
-{
-    "checkLeaks": true,
-    "diff": true,
-    "exclude": ["node_modules"],
-    "package": "./package.json",
-    "require": "ts-node/register",
-    "sourceMaps": true,
-    "spec": ["src/**/*.spec.ts"]
-}

@@ -1,22 +1,22 @@
-import { expect } from "chai";
+import { describe, expect, it } from "@jest/globals";
 import reverString from "./index";
 
 describe("reverseString", () => {
-    context("When the input is a string with a length of 1", () => {
+    describe("When the input is a string with a length of 1", () => {
         it("should return the string", () => {
-            expect(reverString("a")).to.equal("a");
+            expect(reverString("a")).toEqual("a");
         });
     });
 
-    context("When the input is a string with a length of 0", () => {
+    describe("When the input is a string with a length of 0", () => {
         it("should return the string", () => {
-            expect(reverString("")).to.equal("");
+            expect(reverString("")).toEqual("");
         });
     });
 
-    context("when the input is 'hello'", () => {
+    describe("when the input is 'hello'", () => {
         it("should return 'olleh'", () => {
-            expect(reverString("hello")).to.equal("olleh");
+            expect(reverString("hello")).toEqual("olleh");
         });
     });
 });

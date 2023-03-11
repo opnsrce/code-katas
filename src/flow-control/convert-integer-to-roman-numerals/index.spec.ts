@@ -1,64 +1,64 @@
-import { expect } from "chai";
+import { describe, expect, it } from "@jest/globals";
 import convertIntegerToRomanNumerals from "./index";
 
 describe("convertIntegerToRomanNumerals", () => {
-    context("When the input is 1", () => {
+    describe("When the input is 1", () => {
         it("should return 'I'", () => {
-            expect(convertIntegerToRomanNumerals(1)).to.equal("I");
+            expect(convertIntegerToRomanNumerals(1)).toEqual("I");
         });
     });
 
-    context("When the input is 5", () => {
+    describe("When the input is 5", () => {
         it("should return 'V'", () => {
-            expect(convertIntegerToRomanNumerals(5)).to.equal("V");
+            expect(convertIntegerToRomanNumerals(5)).toEqual("V");
         });
     });
 
-    context("When the input is 10", () => {
+    describe("When the input is 10", () => {
         it("should return 'X", () => {
-            expect(convertIntegerToRomanNumerals(10)).to.equal("X");
+            expect(convertIntegerToRomanNumerals(10)).toEqual("X");
         });
     });
 
-    context("When the input is 100", () => {
+    describe("When the input is 100", () => {
         it("should return 'C'", () => {
-            expect(convertIntegerToRomanNumerals(100)).to.equal("C");
+            expect(convertIntegerToRomanNumerals(100)).toEqual("C");
         });
     });
 
-    context("When the input is 500", () => {
+    describe("When the input is 500", () => {
         it("should return 'D'", () => {
-            expect(convertIntegerToRomanNumerals(500)).to.equal("D");
+            expect(convertIntegerToRomanNumerals(500)).toEqual("D");
         });
     });
 
-    context("When the input is 1000", () => {
+    describe("When the input is 1000", () => {
         it("should return 'M'", () => {
-            expect(convertIntegerToRomanNumerals(1000)).to.equal("M");
+            expect(convertIntegerToRomanNumerals(1000)).toEqual("M");
         });
     });
 
-    context("When the input is '4'", () => {
+    describe("When the input is '4'", () => {
         it("should return 'IV'", () => {
-            expect(convertIntegerToRomanNumerals(4)).to.equal("IV");
+            expect(convertIntegerToRomanNumerals(4)).toEqual("IV");
         });
     });
 
-    context("When the input is '9'", () => {
+    describe("When the input is '9'", () => {
         it("should return 'IX'", () => {
-            expect(convertIntegerToRomanNumerals(9)).to.equal("IX");
+            expect(convertIntegerToRomanNumerals(9)).toEqual("IX");
         });
     });
 
-    context("When the input is 2008", () => {
+    describe("When the input is 2008", () => {
         it("should return 'MMVIII'", () => {
-            expect(convertIntegerToRomanNumerals(2008)).to.equal("MMVIII");
+            expect(convertIntegerToRomanNumerals(2008)).toEqual("MMVIII");
         });
     });
 
-    context("When the input is '1666'", () => {
+    describe("When the input is '1666'", () => {
         it("should return MDCLXVI", () => {
-            expect(convertIntegerToRomanNumerals(1666)).to.equal("MDCLXVI");
+            expect(convertIntegerToRomanNumerals(1666)).toEqual("MDCLXVI");
         });
     });
 });

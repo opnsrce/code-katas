@@ -1,28 +1,28 @@
-import { expect } from "chai";
+import { describe, expect, it } from "@jest/globals";
 import secondLargestNumber from "./index";
 
 describe("secondLargestNumber", () => {
-    context("When the input is an array of more than 2 numbers", () => {
+    describe("When the input is an array of more than 2 numbers", () => {
         it("should return the second largest number in the array", () => {
             const numbers = [5, 7, 22, 16, 12];
 
-            expect(secondLargestNumber(numbers)).to.equal(16);
+            expect(secondLargestNumber(numbers)).toEqual(16);
         });
     });
 
-    context("When the iput is an empty array", () => {
+    describe("When the iput is an empty array", () => {
         it("should return undefined", () => {
             const numbers = [] as unknown as number[];
 
-            expect(secondLargestNumber(numbers)).to.equal(undefined);
+            expect(secondLargestNumber(numbers)).toEqual(undefined);
         });
     });
 
-    context("When the input is an array containing non-numeric values", () => {
+    describe("When the input is an array containing non-numeric values", () => {
         it("should throw an error", () => {
             const numbers = ["hello", 5, 10] as unknown as number[];
 
-            expect(() => secondLargestNumber(numbers)).to.throw(TypeError);
+            expect(() => secondLargestNumber(numbers)).toThrow(TypeError);
         });
     });
 });

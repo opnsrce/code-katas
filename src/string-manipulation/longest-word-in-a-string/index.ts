@@ -6,12 +6,8 @@
 const lengthOfLongestWordInString = (string: string = ""): number => {
     const words = string.match(/(\w+)/g);
 
-    if (string.length < 2) {
+    if (string.length < 2 || !words) {
         return string.length;
-    }
-
-    if (!words) {
-        return 0;
     }
 
     return words.reduce(

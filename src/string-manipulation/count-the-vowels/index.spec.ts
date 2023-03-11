@@ -1,30 +1,30 @@
-import { expect } from "chai";
+import { describe, expect, it } from "@jest/globals";
 import countTheVowels from "./index";
 
 describe("countTheVowels", () => {
-    context("When the input is a string with two vowels", () => {
+    describe("When the input is a string with two vowels", () => {
         it("should return 2", () => {
-            expect(countTheVowels("hello")).to.equal(2);
+            expect(countTheVowels("hello")).toEqual(2);
         });
     });
 
-    context("When the input is a string has no vowels", () => {
+    describe("When the input is a string has no vowels", () => {
         it("should return 0", () => {
-            expect(countTheVowels("bcd")).to.equal(0);
+            expect(countTheVowels("bcd")).toEqual(0);
         });
     });
 
-    context("When the input is an empty string", () => {
+    describe("When the input is an empty string", () => {
         it("should return 0", () => {
-            expect(countTheVowels("")).to.equal(0);
+            expect(countTheVowels("")).toEqual(0);
         });
     });
 
-    context("When input is undefined", () => {
+    describe("When input is undefined", () => {
         it("should return 0", () => {
             const string = undefined as unknown as string;
 
-            expect(countTheVowels(string)).to.equal(0);
+            expect(countTheVowels(string)).toEqual(0);
         });
     });
 });
