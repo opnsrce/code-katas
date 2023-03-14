@@ -4,6 +4,7 @@
     "description": "Various code katas",
     "main": "index.js",
     "scripts": {
+        "prebuild": "rm -rf ./dist ./coverage",
         "build": "tsc",
         "coverage": "nyc npm run test",
         "lint": "prettier --write .",
