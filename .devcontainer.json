@@ -1,0 +1,34 @@
+{
+    "name": "TypeScript Development Environment",
+    "workspaceFolder": "/app",
+    "service": "node",
+    "dockerComposeFile": "./docker-compose.yml",
+    "shutdownAction": "none",
+    "containerEnv": {
+        "SOURCE_CODE_DIR": "${localEnv:SOURCE_CODE_DIR}"
+    },
+    "remoteEnv": {
+        "SOURCE_CODE_DIR": "${localEnv:SOURCE_CODE_DIR}"
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "editor.rulers": [80],
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "extensions.autoCheckUpdates": true,
+                "extensions.autoUpdate": true,
+                "[javascript]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                }
+			},
+			"extensions": [
+				"ms-vscode-remote.remote-containers",
+				"ms-azuretools.vscode-docker",
+				"DavidAnson.vscode-markdownlint",
+				"esbenp.prettier-vscode",
+				"stkb.rewrap"
+			]
+        }
+    }
+}

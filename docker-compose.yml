@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  node:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    working_dir: /app
+    container_name: typescript-project
+    volumes:
+      - .:/app
+    command: [ "sleep", "infinity" ]
