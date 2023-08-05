@@ -5,7 +5,7 @@ services:
             context: .
             dockerfile: ./Dockerfile
         working_dir: /app
-        container_name: typescript-project
+        container_name: code-katas
         volumes:
             - .:/app
         command: ["sleep", "infinity"]

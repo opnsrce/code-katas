@@ -1,5 +1,5 @@
 {
-    "name": "TypeScript Development Environment",
+    "name": "Code Katas",
     "workspaceFolder": "/app",
     "service": "node",
     "dockerComposeFile": "./docker-compose.yml",
