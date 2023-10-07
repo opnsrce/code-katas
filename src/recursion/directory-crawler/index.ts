@@ -1,3 +1,8 @@
+/**
+ * @description Write a function that recursively searches a directory structure
+ * for files with a given extension and returns array of files names that match.
+ */
+
 import fs from "node:fs";
 import path from "node:path";
 

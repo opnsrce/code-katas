@@ -1,3 +1,8 @@
+/**
+ * @description Write a function that takes an unsorted array of numbers and
+ * returns a sorted array of numbers using the Quick Sort algorithm.
+ */
+
 const quickSort = (numbers: number[]): number[] => {
     if (numbers.length <= 1) {
         return numbers;
