@@ -18,4 +18,10 @@ describe("twoSum", () => {
             expect(twoSum([3, 3], 6)).toEqual([0, 1]);
         });
     });
+
+    describe("Input: nums = [3,3], target = 9", () => {
+        it("should return []", () => {
+            expect(twoSum([3, 3], 9)).toEqual([]);
+        });
+    });
 });
